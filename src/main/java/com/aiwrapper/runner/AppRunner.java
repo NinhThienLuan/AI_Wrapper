@@ -25,6 +25,10 @@ public class AppRunner implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
+        if (appProperties.isGui()) {
+            System.out.println("GUI mode is enabled. Skipping automatic command-line execution.");
+            return;
+        }
         String module = appProperties.getModule();
         if (module == null || module.isEmpty()) {
             module = "translate";

@@ -1,5 +1,9 @@
 app:
   module: translate
+  gui: true
+
+server:
+  port: 0
 
 ai:
   provider: ollama

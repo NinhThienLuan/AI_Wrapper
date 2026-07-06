@@ -7,6 +7,7 @@ import org.springframework.stereotype.Component;
 @ConfigurationProperties(prefix = "app")
 public class AppProperties {
     private String module;
+    private boolean gui = true;
 
     public String getModule() {
         return module;
@@ -14,5 +15,13 @@ public class AppProperties {
 
     public void setModule(String module) {
         this.module = module;
+    }
+
+    public boolean isGui() {
+        return gui;
+    }
+
+    public void setGui(boolean gui) {
+        this.gui = gui;
     }
 }

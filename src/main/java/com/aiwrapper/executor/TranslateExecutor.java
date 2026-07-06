@@ -44,7 +44,7 @@ public class TranslateExecutor implements BaseExecutor {
 
             String translated;
             try {
-                translated = ai.complete(prompt, Map.of("temperature", 0.2));
+                translated = ai.complete(prompt, options);
             } catch (Exception e) {
                 translated = "[ERROR] " + e.getMessage();
             }
