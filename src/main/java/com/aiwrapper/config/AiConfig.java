@@ -8,6 +8,15 @@ public class AiConfig {
     private Ollama ollama = new Ollama();
     private OpenAi openai = new OpenAi();
     private Gemini gemini = new Gemini();
+    private GoogleTranslate googletranslate = new GoogleTranslate();
+
+    public GoogleTranslate getGoogletranslate() {
+        return googletranslate;
+    }
+
+    public void setGoogletranslate(GoogleTranslate googletranslate) {
+        this.googletranslate = googletranslate;
+    }
 
     public String getProvider() {
         return provider;
@@ -101,6 +110,18 @@ public class AiConfig {
 
         public void setModel(String model) {
             this.model = model;
+        }
+    }
+
+    public static class GoogleTranslate {
+        private String apiKey;
+
+        public String getApiKey() {
+            return apiKey;
+        }
+
+        public void setApiKey(String apiKey) {
+            this.apiKey = apiKey;
         }
     }
 }

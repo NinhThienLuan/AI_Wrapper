@@ -16,6 +16,8 @@ ai:
   gemini:
     apiKey: ${GEMINI_API_KEY:}
     model: gemini-1.5-flash
+  googletranslate:
+    apiKey: ${GOOGLE_TRANSLATE_API_KEY:}
 
 io:
   inputDir: ./data/input

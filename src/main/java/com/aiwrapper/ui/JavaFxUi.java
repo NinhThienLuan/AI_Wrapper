@@ -134,7 +134,7 @@ public class JavaFxUi {
 
         // 4. Provider Selection
         Label providerLabel = createFormLabel("AI Provider:");
-        ComboBox<String> providerSelect = new ComboBox<>(FXCollections.observableArrayList("ollama", "openai", "gemini"));
+        ComboBox<String> providerSelect = new ComboBox<>(FXCollections.observableArrayList("ollama", "openai", "gemini", "googletranslate"));
         providerSelect.setValue(aiConfig.getProvider() != null ? aiConfig.getProvider() : "ollama");
         styleDropdown(providerSelect);
         grid.add(providerLabel, 0, 3);
@@ -171,6 +171,9 @@ public class JavaFxUi {
                     modelSelect.setValue(def != null && !def.isEmpty() ? def : "gemini-1.5-flash");
                 } else if ("ollama".equalsIgnoreCase(newVal)) {
                     fetchOllamaModels(modelSelect);
+                } else if ("googletranslate".equalsIgnoreCase(newVal)) {
+                    modelSelect.setItems(FXCollections.observableArrayList("default"));
+                    modelSelect.setValue("default");
                 }
             }
         });
